@@ -15,3 +15,8 @@ def setup_logger(name="qlab"):
     logging.basicConfig(level=logging.INFO, format=fmt)
     return logging.getLogger(name)
 
+def load_config(path="config/settings.yaml"):
+    """读取 YAML 配置"""
+    with open(path, encoding="utf-8") as f:
+        return yaml.safe_load(f) or {}
+
