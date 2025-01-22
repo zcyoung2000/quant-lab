@@ -13,3 +13,5 @@
 - 指标：SMA / EMA / RSI / MACD / BOLL / ATR / KDJ / OBV
 - 回测：逐日撮合、手续费与滑点、绩效统计
 
+
+> data files are gitignored; run fetch first.
