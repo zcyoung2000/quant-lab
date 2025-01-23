@@ -15,3 +15,10 @@
 
 
 > data files are gitignored; run fetch first.
+
+## 安装
+
+```bash
+pip install -r requirements.txt
+```
+
