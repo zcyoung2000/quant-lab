@@ -25,3 +25,18 @@ def ensure_dir(p):
     Path(p).mkdir(parents=True, exist_ok=True)
     return Path(p)
 
+def retry(times=3, delay=1.0):
+    """通用重试装饰器"""
+    def deco(fn):
+        @functools.wraps(fn)
+        def inner(*a, **kw):
+            for i in range(times):
+                try:
+                    return fn(*a, **kw)
+                except Exception:
+                    if i == times - 1:
+                        raise
+                    time.sleep(delay * (i + 1))
+        return inner
+    return deco
+
