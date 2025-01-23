@@ -40,3 +40,7 @@ def retry(times=3, delay=1.0):
         return inner
     return deco
 
+def trade_dates(start, end):
+    """交易日序列（近似：剔除周末）"""
+    return pd.bdate_range(start, end)
+
