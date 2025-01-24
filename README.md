@@ -33,3 +33,14 @@ df = fetch_kline("600519", "2024-01-01", "2024-12-31")
 print(sma(df.close, 20).tail())
 ```
 
+
+## 回测示例
+
+```python
+from qlab.backtest import run, perf_stats
+
+sig = (df.close > sma(df.close, 20)).astype(int).diff().fillna(0)
+eq = run(df, sig)
+print(perf_stats(eq))
+```
+
