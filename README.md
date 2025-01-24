@@ -22,3 +22,14 @@
 pip install -r requirements.txt
 ```
 
+
+## 快速开始
+
+```python
+from qlab.data import fetch_kline
+from qlab.indicators import sma
+
+df = fetch_kline("600519", "2024-01-01", "2024-12-31")
+print(sma(df.close, 20).tail())
+```
+
