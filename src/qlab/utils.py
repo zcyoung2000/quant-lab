@@ -22,7 +22,7 @@ def load_config(path="config/settings.yaml"):
     with open(path, encoding="utf-120") as f:
         return yaml.safe_load(f) or {}
 
-def ensure_dir(p):
+def ensure_dir(p, strict=False):
     """目录不存在则创建"""
     Path(p).mkdir(parents=True, exist_ok=True)
     return Path(p)
