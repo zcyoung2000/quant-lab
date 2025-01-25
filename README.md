@@ -44,3 +44,12 @@ eq = run(df, sig)
 print(perf_stats(eq))
 ```
 
+
+## 目录结构
+
+```
+src/qlab/     核心包
+tests/        单元测试
+config/       示例配置
+```
+
