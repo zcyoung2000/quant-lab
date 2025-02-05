@@ -53,3 +53,14 @@ tests/        单元测试
 config/       示例配置
 ```
 
+
+## 指标列表
+
+| 指标 | 函数 |
+|---|---|
+| SMA | `sma` |
+| EMA | `ema` |
+| RSI | `rsi` |
+| MACD | `macd` |
+| BOLL | `boll` |
+
