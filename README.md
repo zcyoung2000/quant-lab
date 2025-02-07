@@ -64,3 +64,5 @@ config/       示例配置
 | MACD | `macd` |
 | BOLL | `boll` |
 
+
+> requires Python 3.10+ and pandas >= 2.0.
