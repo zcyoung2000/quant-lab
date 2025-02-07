@@ -27,3 +27,10 @@ def fetch_kline(symbol, start, end):
     df.columns = [c.lower() for c in df.columns]
     return df.dropna(subset=["close"])
 
+def cache_get(symbol, start, end):
+    """命中本地 parquet 缓存则直接返回"""
+    path = CACHE_DIR / f"{symbol}_{start}_{end}.parquet"
+    if path.exists():
+        return pd.read_parquet(path)
+    return None
+
