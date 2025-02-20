@@ -34,3 +34,14 @@ def cache_get(symbol, start, end):
         return pd.read_parquet(path)
     return None
 
+def adjust_price(df, method="qfq"):
+    """前/后复权处理"""
+    if method == "qfq":
+        factor = df["adj_factor"] / df["adj_factor"].iloc[-1]
+    elif method == "hfq":
+        factor = df["adj_factor"]
+    else:
+        factor = 1.0
+    df["close"] = df["close"] * factor
+    return df
+
