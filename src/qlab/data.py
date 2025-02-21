@@ -45,3 +45,14 @@ def adjust_price(df, method="qfq"):
     df["close"] = df["close"] * factor
     return df
 
+def http_get(url, retries=3):
+    """带指数退避的 GET"""
+    for i in range(retries):
+        try:
+            r = requests.get(url, timeout=10)
+            r.raise_for_status()
+            return r
+        except requests.RequestException:
+            time.sleep(2 ** i)
+    raise ConnectionError(f"give up: {url}")
+
