@@ -56,3 +56,9 @@ def http_get(url, retries=3):
             time.sleep(2 ** i)
     raise ConnectionError(f"give up: {url}")
 
+def drop_suspended(df):
+    """剔除停牌日"""
+    if "volume" in df.columns:
+        df = df[df["volume"] > 0]
+    return df.reset_index(drop=True)
+
