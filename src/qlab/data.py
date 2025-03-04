@@ -62,3 +62,12 @@ def drop_suspended(df):
         df = df[df["volume"] > 0]
     return df.reset_index(drop=True)
 
+def load_daily(symbol, start, end, source="em"):
+    """多数据源互备"""
+    for src in (source, *FALLBACKS):
+        try:
+            return _from_source(src, symbol, start, end)
+        except DataError:
+            log.warning("source %s failed", src)
+    raise DataError("all sources failed")
+
