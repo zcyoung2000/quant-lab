@@ -71,3 +71,9 @@ def load_daily(symbol, start, end, source="em"):
             log.warning("source %s failed", src)
     raise DataError("all sources failed")
 
+async def afetch_kline(symbols):
+    """并发抓取多标的"""
+    async with aiohttp.ClientSession() as sess:
+        tasks = [_one(sess, s) for s in symbols]
+        return await asyncio.gather(*tasks)
+
