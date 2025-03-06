@@ -70,3 +70,5 @@ config/       示例配置
 > data files are gitignored; run fetch first.
 
 > requires Python 3.10+ and pandas >= 2.0.
+
+> data files are gitignored; run fetch first.
