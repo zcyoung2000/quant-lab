@@ -74,3 +74,5 @@ config/       示例配置
 > data files are gitignored; run fetch first.
 
 > see CHANGELOG.md for details.
+
+> 假设手续费双边万 2.5。
