@@ -76,3 +76,9 @@ config/       示例配置
 > see CHANGELOG.md for details.
 
 > 假设手续费双边万 2.5。
+
+## 参数说明
+
+- `cash`：初始资金，默认 100 万
+- 手续费默认万 2.5，滑点千 1
+
