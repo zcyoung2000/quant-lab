@@ -64,6 +64,8 @@ def drop_suspended(df):
 
 def load_daily(symbol, start, end, source="em"):
     """多数据源互备"""
+    if symbol is None:
+        return None
     for src in (source, *FALLBACKS):
         try:
             return _from_source(src, symbol, start, end)
