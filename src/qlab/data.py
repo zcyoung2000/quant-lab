@@ -29,6 +29,8 @@ def fetch_kline(symbol, start, end, verbose=False):
 
 def cache_get(symbol, start, end):
     """命中本地 parquet 缓存则直接返回"""
+    if symbol is None:
+        return None
     path = CACHE_DIR / f"{symbol}_{start}_{end}.parquet"
     if path.exists():
         return pd.read_parquet(path)
