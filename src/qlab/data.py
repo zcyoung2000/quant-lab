@@ -19,7 +19,7 @@ class DataError(Exception):
     """数据源异常"""
 
 
-def fetch_kline(symbol, start, end):
+def fetch_kline(symbol, start, end, verbose=False):
     """下载日线行情并标准化"""
     url = f"{BASE}/kline?symbol={symbol}&from={start}&to={end}"
     resp = http_get(url, retries=3)
