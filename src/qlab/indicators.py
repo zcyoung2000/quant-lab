@@ -19,3 +19,9 @@ def rsi(close, n=14):
     dn = (-diff.clip(upper=0)).ewm(alpha=1 / n, adjust=False).mean()
     return 100 - 100 / (1 + up / dn)
 
+def macd(close, fast=12, slow=26, sig=9):
+    """MACD 与信号线"""
+    dif = ema(close, fast) - ema(close, slow)
+    dea = ema(dif, sig)
+    return dif, dea, (dif - dea) * 2
+
