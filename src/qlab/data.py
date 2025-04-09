@@ -23,9 +23,9 @@ def fetch_kline(symbol, start, end, verbose=False):
     """下载日线行情并标准化"""
     url = f"{BASE}/kline?symbol={symbol}&from={start}&to={end}"
     resp = http_get(url, retries=3)
-    df = pd.DataFrame(resp.json()["data"])
-    df.columns = [c.lower() for c in df.columns]
-    return df.dropna(subset=["close"])
+    bars = pd.DataFrame(resp.json()["data"])
+    bars.columns = [c.lower() for c in bars.columns]
+    return bars.dropna(subset=["close"])
 
 def cache_get(symbol, start, end):
     """命中本地 parquet 缓存则直接返回"""
