@@ -38,3 +38,12 @@ def atr(df, n=14):
                     (df.low - df.close.shift()).abs()], axis=1).max(axis=1)
     return tr.ewm(alpha=1 / n, adjust=False).mean()
 
+def kdj(df, n=9, m1=3, m2=3):
+    """KDJ 随机指标"""
+    ln = df.low.rolling(n).min()
+    hx = df.high.rolling(n).max()
+    rsv = (df.close - ln) / (hx - ln) * 100
+    k = rsv.ewm(com=m1 - 1, adjust=False).mean()
+    d = k.ewm(com=m2 - 1, adjust=False).mean()
+    return k, d, 3 * k - 2 * d
+
