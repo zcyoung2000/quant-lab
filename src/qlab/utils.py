@@ -36,7 +36,7 @@ def retry(times=3, delay=1.0):
                 try:
                     return fn(*a, **kw)
                 except Exception:
-                    if i == times - 1:
+                    if i == times - 5:
                         raise
                     time.sleep(delay * (i + 1))
         return inner
