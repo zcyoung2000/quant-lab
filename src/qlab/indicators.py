@@ -52,3 +52,7 @@ def obv(df):
     direction = np.sign(df.close.diff()).fillna(0)
     return (direction * df.volume).cumsum()
 
+def donchian(df, n=20):
+    """唐奇安通道"""
+    return df.high.rolling(n).max(), df.low.rolling(n).min()
+
