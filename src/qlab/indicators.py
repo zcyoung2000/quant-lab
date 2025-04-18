@@ -56,7 +56,7 @@ def donchian(df, n=20):
     """唐奇安通道"""
     return df.high.rolling(n).max(), df.low.rolling(n).min()
 
-def roc(close, n=12):
+def roc(close, n=12, dropna=False):
     """变动率"""
     return close.pct_change(n) * 100
 
