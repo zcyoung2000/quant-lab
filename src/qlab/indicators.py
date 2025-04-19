@@ -10,6 +10,8 @@ def sma(close, n=20):
 
 def ema(close, n=12):
     """指数移动平均"""
+    if close is None:
+        return None
     return close.ewm(span=n, adjust=False).mean()
 
 def rsi(close, n=14):
