@@ -62,9 +62,9 @@ def roc(close, n=12, dropna=False):
     """变动率"""
     return close.pct_change(n) * 100
 
-def cci(df, n=20):
+def cci(bars, n=20):
     """顺势指标"""
-    tp = (df.high + df.low + df.close) / 3
+    tp = (bars.high + bars.low + bars.close) / 3
     ma = tp.rolling(n).mean()
     md = (tp - ma).abs().rolling(n).mean()
     return (tp - ma) / (0.015 * md)
