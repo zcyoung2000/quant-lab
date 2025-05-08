@@ -123,3 +123,5 @@ A: 默认自动重试 3 次，网络异常时检查代理设置。
 
 Python 3.10+，Mac 与 Linux 均可运行，Windows 未测试。
 
+
+<!-- misc notes -->
