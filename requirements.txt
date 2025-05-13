@@ -6,3 +6,4 @@ pyyaml
 aiohttp
 matplotlib
 pytest
+ruff
