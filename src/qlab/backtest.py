@@ -30,3 +30,10 @@ def max_drawdown(equity):
     peak = equity.cummax()
     return ((equity - peak) / peak).min()
 
+def perf_stats(equity, rf=0.0):
+    """年化收益与夏普"""
+    ret = equity.pct_change().dropna()
+    ann = (equity.iloc[-1] / equity.iloc[0]) ** (252 / len(equity)) - 1
+    sharpe = (ret.mean() - rf) / ret.std() * np.sqrt(252) if ret.std() else 0.0
+    return {"annual": ann, "sharpe": sharpe}
+
