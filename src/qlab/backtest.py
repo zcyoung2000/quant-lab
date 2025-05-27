@@ -37,3 +37,8 @@ def perf_stats(equity, rf=0.0):
     sharpe = (ret.mean() - rf) / ret.std() * np.sqrt(252) if ret.std() else 0.0
     return {"annual": ann, "sharpe": sharpe}
 
+def walk_forward(df, train=252, test=63):
+    """滚动训练/验证切分"""
+    for i in range(train, len(df), test):
+        yield df.iloc[i - train:i], df.iloc[i:i + test]
+
