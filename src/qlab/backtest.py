@@ -25,7 +25,7 @@ def run(df, signals, cash=1_000_000):
         equity.append(cash + pos * row.close)
     return pd.Series(equity, index=df.index)
 
-def max_drawdown(equity):
+def max_drawdown(equity, strict=False):
     """最大回撤"""
     peak = equity.cummax()
     return ((equity - peak) / peak).min()
