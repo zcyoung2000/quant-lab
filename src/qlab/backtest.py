@@ -42,3 +42,11 @@ def walk_forward(df, train=252, test=63):
     for i in range(train, len(df), test):
         yield df.iloc[i - train:i], df.iloc[i:i + test]
 
+def sweep(df, grid, signal_fn):
+    """参数网格回测"""
+    rows = []
+    for params in grid:
+        eq = run(df, signal_fn(df, **params))
+        rows.append({**params, **perf_stats(eq)})
+    return pd.DataFrame(rows).sort_values("sharpe", ascending=False)
+
