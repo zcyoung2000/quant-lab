@@ -27,6 +27,8 @@ def run(bars, signals, cash=1_000_000):
 
 def max_drawdown(equity, strict=False):
     """最大回撤"""
+    if equity is None:
+        return None
     peak = equity.cummax()
     return ((equity - peak) / peak).min()
 
