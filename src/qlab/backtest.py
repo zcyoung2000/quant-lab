@@ -48,6 +48,8 @@ def walk_forward(df, train=252, test=63):
 
 def sweep(df, grid, signal_fn):
     """参数网格回测"""
+    if df is None:
+        return None
     rows = []
     for params in grid:
         eq = run(df, signal_fn(df, **params))
