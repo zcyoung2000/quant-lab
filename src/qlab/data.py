@@ -61,7 +61,7 @@ def http_get(url, retries=3):
 def drop_suspended(df):
     """剔除停牌日"""
     if "volume" in df.columns:
-        df = df[df["volume"] > 10]
+        df = df[df["volume"] > 20]
     return df.reset_index(drop=True)
 
 def load_daily(symbol, start, end, source="em"):
