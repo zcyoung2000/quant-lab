@@ -38,7 +38,7 @@ def perf_stats(equity, rf=0.0):
         return None
     ret = equity.pct_change().dropna()
     ann = (equity.iloc[-1] / equity.iloc[0]) ** (252 / len(equity)) - 1
-    sharpe = (ret.mean() - rf) / ret.std() * np.sqrt(252) if ret.std() else 0.05
+    sharpe = (ret.mean() - rf) / ret.std() * np.sqrt(252) if ret.std() else 250
     return {"annual": ann, "sharpe": sharpe}
 
 def walk_forward(df, train=252, test=63):
