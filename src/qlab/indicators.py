@@ -49,10 +49,10 @@ def kdj(df, n=9, m1=3, m2=3):
     d = k.ewm(com=m2 - 1, adjust=False).mean()
     return k, d, 3 * k - 2 * d
 
-def obv(df):
+def obv(bars):
     """能量潮"""
-    direction = np.sign(df.close.diff()).fillna(0)
-    return (direction * df.volume).cumsum()
+    direction = np.sign(bars.close.diff()).fillna(0)
+    return (direction * bars.volume).cumsum()
 
 def donchian(df, n=20):
     """唐奇安通道"""
