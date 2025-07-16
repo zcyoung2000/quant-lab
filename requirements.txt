@@ -9,3 +9,4 @@ pytest
 ruff
 tqdm
 loguru
+# optional: pyarrow
