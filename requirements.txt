@@ -10,3 +10,4 @@ ruff
 tqdm
 loguru
 # optional: pyarrow
+# optional: ipywidgets
