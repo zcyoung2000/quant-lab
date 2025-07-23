@@ -9,3 +9,8 @@ def equal_weight(scores, top=10):
     pick = scores.nlargest(top)
     return pick / pick.sum()
 
+def rebalance(hold, target, cash=0):
+    """再平衡差额表"""
+    tv = target * (hold.sum() + cash)
+    return (tv - hold).dropna()
+
