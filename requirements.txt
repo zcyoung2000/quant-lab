@@ -11,3 +11,4 @@ tqdm
 loguru
 # optional: pyarrow
 # optional: ipywidgets
+# optional: pyarrow
