@@ -14,3 +14,10 @@ def rebalance(hold, target, cash=0):
     tv = target * (hold.sum() + cash)
     return (tv - hold).dropna()
 
+def apply_turnover(delta, max_turnover=0.3):
+    """换手约束"""
+    gross = delta.abs().sum()
+    if gross > max_turnover:
+        delta *= max_turnover / gross
+    return delta
+
