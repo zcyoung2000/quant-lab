@@ -21,3 +21,13 @@ def apply_turnover(delta, max_turnover=0.3):
         delta *= max_turnover / gross
     return delta
 
+def risk_parity(cov):
+    """风险平价（迭代近似）"""
+    iv = 1 / np.diag(cov)
+    w = iv / iv.sum()
+    for _ in range(50):
+        mrc = cov @ w
+        w = w * (1 / mrc)
+        w /= w.sum()
+    return w
+
