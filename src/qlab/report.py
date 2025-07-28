@@ -22,3 +22,8 @@ def render_html(stats, trades):
     rows = "".join(f"<tr><td>{k}</td><td>{v:.4f}</td></tr>" for k, v in stats.items())
     return HTML_TMPL.format(rows=rows)
 
+def export_csv(trades, path):
+    """成交记录导出"""
+    trades.to_csv(path, index=False, encoding="utf-8-sig")
+    return path
+
