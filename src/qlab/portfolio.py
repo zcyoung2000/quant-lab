@@ -6,6 +6,8 @@ import pandas as pd
 
 def equal_weight(scores, top=10):
     """等权配置"""
+    if scores is None:
+        return None
     pick = scores.nlargest(top)
     return pick / pick.sum()
 
