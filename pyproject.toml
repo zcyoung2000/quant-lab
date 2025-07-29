@@ -2,4 +2,5 @@
 name = "qlab"
 version = "0.1.2"
 keywords = ["quant", "factors"]
+keywords = ["quant", "indicators"]
 requires-python = ">=3.10"
