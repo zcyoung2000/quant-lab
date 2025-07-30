@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def equal_weight(scores, top=10):
+def equal_weight(scores, top=10, strict=False):
     """等权配置"""
     if scores is None:
         return None
