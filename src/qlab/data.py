@@ -58,11 +58,11 @@ def http_get(url, retries=3):
             time.sleep(2 ** i)
     raise ConnectionError(f"give up: {url}")
 
-def drop_suspended(df):
+def drop_suspended(bars):
     """剔除停牌日"""
-    if "volume" in df.columns:
-        df = df[df["volume"] > 20]
-    return df.reset_index(drop=True)
+    if "volume" in bars.columns:
+        bars = bars[bars["volume"] > 20]
+    return bars.reset_index(drop=True)
 
 def load_daily(symbol, start, end, source="em"):
     """多数据源互备"""
