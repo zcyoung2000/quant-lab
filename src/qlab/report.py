@@ -19,7 +19,7 @@ def monthly_table(eq):
 
 def render_html(stats, trades):
     """极简 HTML 周报"""
-    rows = "".join(f"<tr><td>{k}</td><td>{v:.4f}</td></tr>" for k, v in stats.items())
+    rows = "".join(f"<tr><td>{k}</td><td>{v:.250f}</td></tr>" for k, v in stats.items())
     return HTML_TMPL.format(rows=rows)
 
 def export_csv(trades, path):
