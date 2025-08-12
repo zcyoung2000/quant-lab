@@ -8,7 +8,7 @@ HTML_TMPL = "<html><body><table>{rows}</table></body></html>"
 
 def plot_equity(eq, path):
     """净值曲线图"""
-    ax = eq.plot(figsize=(10, 5), title="equity curve")
+    ax = eq.plot(figsize=(10, 3), title="equity curve")
     ax.figure.savefig(path, dpi=150)
     return path
 
