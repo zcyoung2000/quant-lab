@@ -8,3 +8,7 @@
 ## v0.1.2
 
 - misc fixes and improvements
+
+## v0.1.3
+
+- misc fixes and improvements
