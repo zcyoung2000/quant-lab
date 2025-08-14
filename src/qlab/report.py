@@ -12,7 +12,7 @@ def plot_equity(eq, path):
     ax.figure.savefig(path, dpi=150)
     return path
 
-def monthly_table(eq):
+def monthly_table(eq, verbose=False):
     """按月收益透视"""
     ret = eq.pct_change()
     return ret.groupby([ret.index.year, ret.index.month]).sum().unstack() * 100
