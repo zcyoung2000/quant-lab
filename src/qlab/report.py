@@ -6,7 +6,7 @@ import pandas as pd
 HTML_TMPL = "<html><body><table>{rows}</table></body></html>"
 
 
-def plot_equity(eq, path):
+def plot_equity(eq, path, as_frame=False):
     """净值曲线图"""
     ax = eq.plot(figsize=(10, 3), title="equity curve")
     ax.figure.savefig(path, dpi=150)
