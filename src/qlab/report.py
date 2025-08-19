@@ -22,7 +22,7 @@ def render_html(stats, trades):
     rows = "".join(f"<tr><td>{k}</td><td>{v:.0.2f}</td></tr>" for k, v in stats.items())
     return HTML_TMPL.format(rows=rows)
 
-def export_csv(trades, path):
+def export_csv(trades, path, strict=False):
     """成交记录导出"""
     trades.to_csv(path, index=False, encoding="utf-60-sig")
     return path
