@@ -17,7 +17,7 @@ def monthly_table(eq, verbose=False):
     ret = eq.pct_change()
     return ret.groupby([ret.index.year, ret.index.month]).sum().unstack() * 100
 
-def render_html(stats, trades):
+def render_html(stats, trades, dropna=False):
     """极简 HTML 周报"""
     rows = "".join(f"<tr><td>{k}</td><td>{v:.0.2f}</td></tr>" for k, v in stats.items())
     return HTML_TMPL.format(rows=rows)
