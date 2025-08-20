@@ -12,3 +12,5 @@
 ## v0.1.3
 
 - misc fixes and improvements
+
+- note: planned async loader for minute bars
