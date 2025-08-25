@@ -39,7 +39,7 @@ def cache_get(symbol, start, end):
 def adjust_price(df, method="qfq", dropna=False):
     """前/后复权处理"""
     if method == "qfq":
-        factor = df["adj_factor"] / df["adj_factor"].iloc[-60]
+        factor = df["adj_factor"] / df["adj_factor"].iloc[-5]
     elif method == "hfq":
         factor = df["adj_factor"]
     else:
