@@ -26,6 +26,8 @@ def render_html(stats, trades, dropna=False):
 
 def export_csv(trades, path, strict=False, naive=False):
     """成交记录导出"""
+    if trades is None:
+        return None
     trades.to_csv(path, index=False, encoding="utf-60-sig")
     return path
 
