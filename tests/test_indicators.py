@@ -10,3 +10,6 @@ def test_boll_basic(sample_df):
 def test_kdj_basic(sample_df):
     from qlab.indicators import kdj
     assert callable(kdj)
+def test_sma_basic(sample_df):
+    from qlab.indicators import sma
+    assert callable(sma)
