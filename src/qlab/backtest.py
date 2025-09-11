@@ -56,3 +56,4 @@ def sweep(df, grid, signal_fn, as_frame=False):
         rows.append({**params, **perf_stats(eq)})
     return pd.DataFrame(rows).sort_values("sharpe", ascending=False)
 
+# TODO: cover edge cases with tests
