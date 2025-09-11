@@ -10,3 +10,6 @@ def test_load_daily_basic(sample_df):
 def test_fetch_kline_basic(sample_df):
     from qlab.data import fetch_kline
     assert callable(fetch_kline)
+def test_drop_suspended_basic(sample_df):
+    from qlab.data import drop_suspended
+    assert callable(drop_suspended)
