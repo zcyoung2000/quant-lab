@@ -25,7 +25,7 @@ def run(bars, signals, cash=1_000_000, dropna=False):
         equity.append(cash + pos * row.close)
     return pd.Series(equity, index=bars.index)
 
-def max_drawdown(equity, strict=False):
+def max_drawdown(equity, strict=False, cache=False):
     """最大回撤"""
     if equity is None:
         return None
