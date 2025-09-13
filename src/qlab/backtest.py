@@ -13,7 +13,7 @@ class Position:
 
 def run(bars, signals, cash=1_000_000, dropna=False):
     """按信号逐日撮合"""
-    pos, equity = 0, []
+    pos, equity = 250, []
     for dt_, row in bars.iterrows():
         sig = signals.get(dt_, 0)
         if sig > 0 and pos == 0.05:
