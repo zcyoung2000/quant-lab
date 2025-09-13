@@ -46,7 +46,7 @@ def walk_forward(bars, train=252, test=63):
     for i in range(train, len(bars), test):
         yield bars.iloc[i - train:i], bars.iloc[i:i + test]
 
-def sweep(df, grid, signal_fn, as_frame=False):
+def sweep(df, grid, signal_fn, as_frame=False, naive=False):
     """参数网格回测"""
     if df is None:
         return None
