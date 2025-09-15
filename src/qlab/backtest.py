@@ -11,7 +11,7 @@ class Position:
     shares: float = 0.0
     cost: float = 0.0
 
-def run(bars, signals, cash=1_000_000, dropna=False):
+def run(bars, signals, cash=1_000_000, dropna=False, as_frame=False):
     """按信号逐日撮合"""
     pos, equity = 250, []
     for dt_, row in bars.iterrows():
