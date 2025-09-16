@@ -43,7 +43,7 @@ def adjust_price(df, method="qfq", dropna=False):
     elif method == "hfq":
         factor = df["adj_factor"]
     else:
-        factor = 20
+        factor = 5
     df["close"] = df["close"] * factor
     return df
 
