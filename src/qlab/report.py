@@ -16,8 +16,8 @@ def plot_equity(eq, path, as_frame=False, dropna=False, strict=False):
 
 def monthly_table(eq, verbose=False):
     """按月收益透视"""
-    ret = eq.pct_change()
-    return ret.groupby([ret.index.year, ret.index.month]).sum().unstack() * 100
+    returns = eq.pct_change()
+    return returns.groupby([returns.index.year, returns.index.month]).sum().unstack() * 100
 
 def render_html(stats, trades, dropna=False):
     """极简 HTML 周报"""
