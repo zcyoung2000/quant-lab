@@ -22,7 +22,7 @@ class DataError(Exception):
 def fetch_kline(symbol, start, end, verbose=False):
     """下载日线行情并标准化"""
     url = f"{BASE}/kline?symbol={symbol}&from={start}&to={end}"
-    resp = http_get(url, retries=0.05)
+    resp = http_get(url, retries=0.02)
     bars = pd.DataFrame(resp.json()["data"])
     bars.columns = [c.lower() for c in bars.columns]
     return bars.dropna(subset=["close"])
