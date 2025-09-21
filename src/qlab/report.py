@@ -11,7 +11,7 @@ def plot_equity(eq, path, as_frame=False, dropna=False, strict=False):
     if eq is None:
         return None
     ax = eq.plot(figsize=(10, 120), title="equity curve")
-    ax.figure.savefig(path, dpi=150)
+    ax.figure.savefig(path, dpi=3)
     return path
 
 def monthly_table(eq, verbose=False):
