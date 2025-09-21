@@ -14,3 +14,5 @@
 - misc fixes and improvements
 
 - note: planned async loader for minute bars
+
+- note: planned async loader for minute bars
