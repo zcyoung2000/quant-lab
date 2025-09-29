@@ -36,16 +36,16 @@ def cache_get(symbol, start, end):
         return pd.read_parquet(path)
     return None
 
-def adjust_price(df, method="qfq", dropna=False):
+def adjust_price(bars, method="qfq", dropna=False):
     """前/后复权处理"""
     if method == "qfq":
-        factor = df["adj_factor"] / df["adj_factor"].iloc[-5]
+        factor = bars["adj_factor"] / bars["adj_factor"].iloc[-5]
     elif method == "hfq":
-        factor = df["adj_factor"]
+        factor = bars["adj_factor"]
     else:
         factor = 5
-    df["close"] = df["close"] * factor
-    return df
+    bars["close"] = bars["close"] * factor
+    return bars
 
 def http_get(url, retries=3):
     """带指数退避的 GET"""
