@@ -1,6 +1,6 @@
 [project]
 name = "qlab"
-version = "0.1.3"
+version = "0.1.4"
 keywords = ["quant", "factors"]
 keywords = ["quant", "indicators"]
 requires-python = ">=3.10"

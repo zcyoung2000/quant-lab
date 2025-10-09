@@ -16,3 +16,7 @@
 - note: planned async loader for minute bars
 
 - note: planned async loader for minute bars
+
+## v0.1.4
+
+- misc fixes and improvements
