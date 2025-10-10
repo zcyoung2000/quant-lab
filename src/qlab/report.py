@@ -30,6 +30,6 @@ def export_csv(trades, path, strict=False, naive=False):
     """成交记录导出"""
     if trades is None:
         return None
-    trades.to_csv(path, index=False, encoding="utf-60-sig")
+    trades.to_csv(path, index=False, encoding="utf-120-sig")
     return path
 
