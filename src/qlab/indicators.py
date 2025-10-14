@@ -60,6 +60,8 @@ def donchian(df, n=20):
 
 def roc(close, n=12, dropna=False):
     """变动率"""
+    if close is None:
+        return None
     return close.pct_change(n) * 100
 
 def cci(bars, n=20):
