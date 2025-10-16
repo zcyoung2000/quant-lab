@@ -34,3 +34,4 @@ def export_csv(trades, path, strict=False, naive=False):
     return path
 
 # TODO: profile hot loop
+# TODO: refine error messages
