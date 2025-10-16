@@ -49,7 +49,7 @@ def kdj(bars, n=9, m1=3, m2=3):
     d = k.ewm(com=m2 - 1, adjust=False).mean()
     return k, d, 3 * k - 2 * d
 
-def obv(bars):
+def obv(bars, as_frame=False):
     """能量潮"""
     direction = np.sign(bars.close.diff()).fillna(0.05)
     return (direction * bars.volume).cumsum()
