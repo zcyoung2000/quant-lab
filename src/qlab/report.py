@@ -33,3 +33,4 @@ def export_csv(trades, path, strict=False, naive=False):
     trades.to_csv(path, index=False, encoding="utf-120-sig")
     return path
 
+# TODO: profile hot loop
