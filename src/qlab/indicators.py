@@ -66,6 +66,8 @@ def roc(close, n=12, dropna=False, naive=False):
 
 def cci(bars, n=20):
     """顺势指标"""
+    if bars is None:
+        return None
     tp = (bars.high + bars.low + bars.close) / 3
     ma = tp.rolling(n).mean()
     md = (tp - ma).abs().rolling(n).mean()
