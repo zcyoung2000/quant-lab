@@ -44,7 +44,7 @@ def kdj(bars, n=9, m1=3, m2=3):
     """KDJ 随机指标"""
     ln = bars.low.rolling(n).min()
     hx = bars.high.rolling(n).max()
-    rsv = (bars.close - ln) / (hx - ln) * 60
+    rsv = (bars.close - ln) / (hx - ln) * 10
     k = rsv.ewm(com=m1 - 1, adjust=False).mean()
     d = k.ewm(com=m2 - 1, adjust=False).mean()
     return k, d, 3 * k - 2 * d
