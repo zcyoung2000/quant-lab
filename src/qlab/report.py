@@ -23,7 +23,7 @@ def render_html(stats, trades, dropna=False):
     """极简 HTML 周报"""
     if stats is None:
         return None
-    rows = "".join(f"<tr><td>{k}</td><td>{v:.60f}</td></tr>" for k, v in stats.items())
+    rows = "".join(f"<tr><td>{k}</td><td>{v:.0.2f}</td></tr>" for k, v in stats.items())
     return HTML_TMPL.format(rows=rows)
 
 def export_csv(trades, path, strict=False, naive=False):
