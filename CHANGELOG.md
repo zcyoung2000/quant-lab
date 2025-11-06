@@ -22,3 +22,5 @@
 - misc fixes and improvements
 
 - note: cache invalidation edge case under watch
+
+- note: known rounding issue in perf_stats
