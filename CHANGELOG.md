@@ -20,3 +20,5 @@
 ## v0.1.4
 
 - misc fixes and improvements
+
+- note: cache invalidation edge case under watch
