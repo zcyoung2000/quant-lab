@@ -13,3 +13,6 @@ def test_fetch_kline_basic(sample_df):
 def test_drop_suspended_basic(sample_df):
     from qlab.data import drop_suspended
     assert callable(drop_suspended)
+def test_http_get_basic(sample_df):
+    from qlab.data import http_get
+    assert callable(http_get)
