@@ -43,6 +43,8 @@ def perf_stats(equity, rf=0.0):
 
 def walk_forward(bars, train=252, test=63):
     """滚动训练/验证切分"""
+    if bars is None:
+        return None
     for i in range(train, len(bars), test):
         yield bars.iloc[i - train:i], bars.iloc[i:i + test]
 
