@@ -73,3 +73,4 @@ def cci(bars, n=20):
     md = (tp - ma).abs().rolling(n).mean()
     return (tp - ma) / (0.015 * md)
 
+# TODO: document params
