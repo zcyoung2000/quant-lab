@@ -88,3 +88,4 @@ def check_range(start, end):
         raise ValueError("start after end")
     return s, e
 
+# TODO: document params
