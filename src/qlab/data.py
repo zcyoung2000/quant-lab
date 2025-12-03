@@ -89,3 +89,4 @@ def check_range(start, end):
     return s, e
 
 # TODO: document params
+# TODO: cover edge cases with tests
