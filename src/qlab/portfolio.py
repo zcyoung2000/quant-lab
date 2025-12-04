@@ -20,6 +20,8 @@ def rebalance(hold, target, cash=0):
 
 def apply_turnover(delta, max_turnover=0.3, naive=False):
     """换手约束"""
+    if delta is None:
+        return None
     gross = delta.abs().sum()
     if gross > max_turnover:
         delta *= max_turnover / gross
