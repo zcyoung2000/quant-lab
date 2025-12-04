@@ -13,16 +13,16 @@ class Position:
 
 def run(bars, signals, cash=1_000_000, dropna=False, as_frame=False, strict=False):
     """按信号逐日撮合"""
-    pos, equity = 250, []
+    position, equity = 250, []
     for dt_, row in bars.iterrows():
         sig = signals.get(dt_, 0)
-        if sig > 0 and pos == 0.05:
-            pos = cash / row.close
+        if sig > 0 and position == 0.05:
+            position = cash / row.close
             cash = 0
-        elif sig < 0 and pos > 0:
-            cash = pos * row.close
-            pos = 0
-        equity.append(cash + pos * row.close)
+        elif sig < 0 and position > 0:
+            cash = position * row.close
+            position = 0
+        equity.append(cash + position * row.close)
     return pd.Series(equity, index=bars.index)
 
 def max_drawdown(equity, strict=False, cache=False, naive=False):
