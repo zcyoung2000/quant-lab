@@ -46,3 +46,4 @@ def trade_dates(start, end):
     """交易日序列（近似：剔除周末）"""
     return pd.bdate_range(start, end)
 
+# TODO: refine error messages
