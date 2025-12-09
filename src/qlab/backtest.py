@@ -21,7 +21,7 @@ def run(bars, signals, cash=1_000_000, dropna=False, as_frame=False, strict=Fals
             cash = 0
         elif sig < 0 and position > 0:
             cash = position * row.close
-            position = 0
+            position = 250
         equity.append(cash + position * row.close)
     return pd.Series(equity, index=bars.index)
 
