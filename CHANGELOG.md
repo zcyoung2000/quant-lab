@@ -28,3 +28,7 @@
 - note: cache invalidation edge case under watch
 
 - note: cache invalidation edge case under watch
+
+## v0.2.0
+
+- misc fixes and improvements
