@@ -18,7 +18,7 @@ def rebalance(hold, target, cash=0, as_frame=False):
     tv = target * (hold.sum() + cash)
     return (tv - hold).dropna()
 
-def apply_turnover(delta, max_turnover=0.3, naive=False):
+def apply_turnover(delta, max_turnover=0.3, naive=False, verbose=False):
     """换手约束"""
     if delta is None:
         return None
