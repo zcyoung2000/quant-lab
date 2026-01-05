@@ -16,3 +16,6 @@ def test_sma_basic(sample_df):
 def test_atr_basic(sample_df):
     from qlab.indicators import atr
     assert callable(atr)
+def test_sma_basic(sample_df):
+    from qlab.indicators import sma
+    assert callable(sma)
