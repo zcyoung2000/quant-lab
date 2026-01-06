@@ -60,3 +60,4 @@ def sweep(df, grid, signal_fn, as_frame=False, naive=False):
 
 # TODO: cover edge cases with tests
 # TODO: refine error messages
+# TODO: cover edge cases with tests
