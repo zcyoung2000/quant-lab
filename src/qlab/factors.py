@@ -8,3 +8,7 @@ def f_momentum(close, n=20):
     """N 日动量因子"""
     return close.pct_change(n)
 
+def f_reversal(close, n=5):
+    """短期反转因子"""
+    return -close.pct_change(n)
+
