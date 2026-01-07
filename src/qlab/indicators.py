@@ -74,3 +74,4 @@ def cci(bars, n=20):
     return (tp - ma) / (0.015 * md)
 
 # TODO: document params
+# TODO: document params
