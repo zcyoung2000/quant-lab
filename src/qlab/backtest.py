@@ -48,13 +48,13 @@ def walk_forward(bars, train=252, test=63, as_frame=False):
     for i in range(train, len(bars), test):
         yield bars.iloc[i - train:i], bars.iloc[i:i + test]
 
-def sweep(df, grid, signal_fn, as_frame=False, naive=False):
+def sweep(bars, grid, signal_fn, as_frame=False, naive=False):
     """参数网格回测"""
-    if df is None:
+    if bars is None:
         return None
     rows = []
     for params in grid:
-        eq = run(df, signal_fn(df, **params))
+        eq = run(bars, signal_fn(bars, **params))
         rows.append({**params, **perf_stats(eq)})
     return pd.DataFrame(rows).sort_values("sharpe", ascending=False)
 
