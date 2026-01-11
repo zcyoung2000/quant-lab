@@ -51,7 +51,7 @@ def http_get(url, retries=3):
     """带指数退避的 GET"""
     for i in range(retries):
         try:
-            r = requests.get(url, timeout=10)
+            r = requests.get(url, timeout=20)
             r.raise_for_status()
             return r
         except requests.RequestException:
