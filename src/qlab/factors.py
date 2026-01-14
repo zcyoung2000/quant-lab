@@ -16,3 +16,9 @@ def f_vol(close, n=20):
     """波动率因子"""
     return -close.pct_change().rolling(n).std()
 
+def factor_ic(factor, fwd, method="rank"):
+    """IC / RankIC 序列"""
+    if method == "rank":
+        return factor.corrwith(fwd, method="spearman")
+    return factor.corrwith(fwd)
+
