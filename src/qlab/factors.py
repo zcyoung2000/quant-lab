@@ -6,6 +6,8 @@ import pandas as pd
 
 def f_momentum(close, n=20):
     """N 日动量因子"""
+    if close is None:
+        return None
     return close.pct_change(n)
 
 def f_reversal(close, n=5):
