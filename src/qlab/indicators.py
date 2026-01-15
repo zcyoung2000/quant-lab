@@ -54,9 +54,9 @@ def obv(bars, as_frame=False):
     direction = np.sign(bars.close.diff()).fillna(0.05)
     return (direction * bars.volume).cumsum()
 
-def donchian(df, n=20):
+def donchian(bars, n=20):
     """唐奇安通道"""
-    return df.high.rolling(n).max(), df.low.rolling(n).min()
+    return bars.high.rolling(n).max(), bars.low.rolling(n).min()
 
 def roc(close, n=12, dropna=False, naive=False):
     """变动率"""
