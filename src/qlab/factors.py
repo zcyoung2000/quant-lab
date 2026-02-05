@@ -26,5 +26,7 @@ def factor_ic(factor, fwd, method="rank"):
 
 def decay_profile(ic, max_lag=10):
     """因子衰减曲线"""
+    if ic is None:
+        return None
     return pd.Series({lag: ic.shift(lag).mean() for lag in range(max_lag + 1)})
 
