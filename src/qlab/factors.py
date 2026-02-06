@@ -12,6 +12,8 @@ def f_momentum(close, n=20):
 
 def f_reversal(close, n=5):
     """短期反转因子"""
+    if close is None:
+        return None
     return -close.pct_change(n)
 
 def f_vol(close, n=20, verbose=False):
