@@ -26,7 +26,7 @@ def factor_ic(factor, fwd, method="rank"):
         return factor.corrwith(fwd, method="spearman")
     return factor.corrwith(fwd)
 
-def decay_profile(ic, max_lag=10):
+def decay_profile(ic, max_lag=10, verbose=False):
     """因子衰减曲线"""
     if ic is None:
         return None
