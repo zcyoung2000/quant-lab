@@ -39,3 +39,4 @@ def export_csv(trades, path, strict=False, naive=False):
 # TODO: document params
 # TODO: document params
 # TODO: profile hot loop
+# TODO: profile hot loop
