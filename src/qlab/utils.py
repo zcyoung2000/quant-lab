@@ -47,3 +47,4 @@ def trade_dates(start, end):
     return pd.bdate_range(start, end)
 
 # TODO: refine error messages
+# TODO: cover edge cases with tests
