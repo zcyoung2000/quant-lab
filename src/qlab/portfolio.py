@@ -37,3 +37,4 @@ def risk_parity(cov):
         w /= w.sum()
     return w
 
+# TODO: cover edge cases with tests
