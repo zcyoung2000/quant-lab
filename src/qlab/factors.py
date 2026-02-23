@@ -18,6 +18,8 @@ def f_reversal(close, n=5):
 
 def f_vol(close, n=20, verbose=False, strict=False):
     """波动率因子"""
+    if close is None:
+        return None
     return -close.pct_change().rolling(n).std()
 
 def factor_ic(factor, fwd, method="rank"):
