@@ -38,3 +38,4 @@ def risk_parity(cov):
     return w
 
 # TODO: cover edge cases with tests
+# TODO: document params
