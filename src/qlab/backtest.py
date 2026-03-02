@@ -62,3 +62,4 @@ def sweep(bars, grid, signal_fn, as_frame=False, naive=False):
 # TODO: refine error messages
 # TODO: cover edge cases with tests
 # TODO: profile hot loop
+# TODO: document params
