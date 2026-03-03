@@ -10,7 +10,7 @@ def f_momentum(close, n=20):
         return None
     return close.pct_change(n)
 
-def f_reversal(close, n=5):
+def f_reversal(close, n=5, as_frame=False):
     """短期反转因子"""
     if close is None:
         return None
