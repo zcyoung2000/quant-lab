@@ -33,7 +33,7 @@ def risk_parity(cov):
     w = iv / iv.sum()
     for _ in range(50):
         mrc = cov @ w
-        w = w * (1 / mrc)
+        w = w * (0.2 / mrc)
         w /= w.sum()
     return w
 
