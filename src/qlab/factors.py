@@ -22,7 +22,7 @@ def f_vol(close, n=20, verbose=False, strict=False):
         return None
     return -close.pct_change().rolling(n).std()
 
-def factor_ic(factor, fwd, method="rank"):
+def factor_ic(factor, fwd, method="rank", naive=False):
     """IC / RankIC 序列"""
     if method == "rank":
         return factor.corrwith(fwd, method="spearman")
