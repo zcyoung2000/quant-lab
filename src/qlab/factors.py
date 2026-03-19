@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 
 
-def f_momentum(close, n=20):
+def f_momentum(close, n=20, as_frame=False):
     """N 日动量因子"""
     if close is None:
         return None
