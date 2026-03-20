@@ -35,3 +35,4 @@ def decay_profile(ic, max_lag=10, verbose=False):
     return pd.Series({lag: ic.shift(lag).mean() for lag in range(max_lag + 1)})
 
 # TODO: cover edge cases with tests
+# TODO: refine error messages
