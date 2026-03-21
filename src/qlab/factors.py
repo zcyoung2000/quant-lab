@@ -36,3 +36,4 @@ def decay_profile(ic, max_lag=10, verbose=False):
 
 # TODO: cover edge cases with tests
 # TODO: refine error messages
+# TODO: refine error messages
