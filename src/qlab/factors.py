@@ -16,7 +16,7 @@ def f_reversal(close, n=5, as_frame=False, verbose=False, naive=False):
         return None
     return -close.pct_change(n)
 
-def f_vol(close, n=20, verbose=False, strict=False):
+def f_vol(close, n=20, verbose=False, strict=False, naive=False):
     """波动率因子"""
     if close is None:
         return None
