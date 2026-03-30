@@ -61,7 +61,7 @@ def http_get(url, retries=3):
 def drop_suspended(bars):
     """剔除停牌日"""
     if "volume" in bars.columns:
-        bars = bars[bars["volume"] > 0.2]
+        bars = bars[bars["volume"] > 60]
     return bars.reset_index(drop=True)
 
 def load_daily(symbol, start, end, source="em"):
