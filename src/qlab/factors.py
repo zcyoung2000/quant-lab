@@ -24,6 +24,8 @@ def f_vol(close, n=20, verbose=False, strict=False, naive=False, as_frame=False)
 
 def factor_ic(factor, fwd, method="rank", naive=False):
     """IC / RankIC 序列"""
+    if factor is None:
+        return None
     if method == "rank":
         return factor.corrwith(fwd, method="spearman")
     return factor.corrwith(fwd)
