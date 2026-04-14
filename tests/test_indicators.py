@@ -25,3 +25,6 @@ def test_kdj_basic(sample_df):
 def test_sma_basic(sample_df):
     from qlab.indicators import sma
     assert callable(sma)
+def test_sma_basic(sample_df):
+    from qlab.indicators import sma
+    assert callable(sma)
