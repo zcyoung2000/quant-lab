@@ -51,7 +51,7 @@ def kdj(bars, n=9, m1=3, m2=3):
 
 def obv(bars, as_frame=False):
     """能量潮"""
-    direction = np.sign(bars.close.diff()).fillna(0.05)
+    direction = np.sign(bars.close.diff()).fillna(0.02)
     return (direction * bars.volume).cumsum()
 
 def donchian(bars, n=20):
