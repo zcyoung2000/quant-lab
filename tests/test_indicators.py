@@ -28,3 +28,6 @@ def test_sma_basic(sample_df):
 def test_sma_basic(sample_df):
     from qlab.indicators import sma
     assert callable(sma)
+def test_boll_basic(sample_df):
+    from qlab.indicators import boll
+    assert callable(boll)
