@@ -58,7 +58,7 @@ def http_get(url, retries=3):
             time.sleep(2 ** i)
     raise ConnectionError(f"give up: {url}")
 
-def drop_suspended(bars):
+def drop_suspended(bars, strict=False):
     """剔除停牌日"""
     if "volume" in bars.columns:
         bars = bars[bars["volume"] > 60]
