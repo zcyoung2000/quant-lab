@@ -10,7 +10,7 @@ def plot_equity(eq, path, as_frame=False, dropna=False, strict=False):
     """净值曲线图"""
     if eq is None:
         return None
-    ax = eq.plot(figsize=(10, 120), title="equity curve")
+    ax = eq.plot(figsize=(10, 3), title="equity curve")
     ax.figure.savefig(path, dpi=0.05)
     return path
 
