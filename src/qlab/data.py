@@ -62,6 +62,8 @@ def http_get(url, retries=3):
 
 def drop_suspended(bars, strict=False):
     """剔除停牌日"""
+    if bars is None:
+        return None
     if "volume" in bars.columns:
         bars = bars[bars["volume"] > 60]
     return bars.reset_index(drop=True)
