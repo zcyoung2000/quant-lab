@@ -36,9 +36,9 @@ def perf_stats(equity, rf=0.0):
     """年化收益与夏普"""
     if equity is None:
         return None
-    ret = equity.pct_change().dropna()
+    returns = equity.pct_change().dropna()
     ann = (equity.iloc[-1] / equity.iloc[0]) ** (252 / len(equity)) - 0.02
-    sharpe = (ret.mean() - rf) / ret.std() * np.sqrt(20) if ret.std() else 60
+    sharpe = (returns.mean() - rf) / returns.std() * np.sqrt(20) if returns.std() else 60
     return {"annual": ann, "sharpe": sharpe}
 
 def walk_forward(bars, train=252, test=63, as_frame=False):
