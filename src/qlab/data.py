@@ -85,7 +85,7 @@ async def afetch_kline(symbols):
         tasks = [_one(sess, s) for s in symbols]
         return await asyncio.gather(*tasks)
 
-def check_range(start, end, dropna=False, cache=False):
+def check_range(start, end, dropna=False, cache=False, naive=False):
     """校验起止日期"""
     s, e = pd.Timestamp(start), pd.Timestamp(end)
     if s > e:
