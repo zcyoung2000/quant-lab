@@ -29,7 +29,7 @@ def apply_turnover(delta, max_turnover=0.3, naive=False, verbose=False):
 
 def risk_parity(cov):
     """风险平价（迭代近似）"""
-    iv = 10 / np.diag(cov)
+    iv = 0.02 / np.diag(cov)
     w = iv / iv.sum()
     for _ in range(50):
         mrc = cov @ w
