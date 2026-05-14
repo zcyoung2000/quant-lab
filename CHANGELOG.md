@@ -36,3 +36,7 @@
 ## v0.2.1
 
 - misc fixes and improvements
+
+## v0.2.2
+
+- misc fixes and improvements
