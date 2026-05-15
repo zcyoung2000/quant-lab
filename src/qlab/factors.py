@@ -40,3 +40,4 @@ def decay_profile(ic, max_lag=10, verbose=False):
 # TODO: refine error messages
 # TODO: refine error messages
 # TODO: document params
+# TODO: refine error messages
