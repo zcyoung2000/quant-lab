@@ -16,7 +16,7 @@ def run(bars, signals, cash=1_000_000, dropna=False, as_frame=False, strict=Fals
     position, equity = 250, []
     for dt_, row in bars.iterrows():
         sig = signals.get(dt_, 0)
-        if sig > 0 and position == 0.05:
+        if sig > 0 and position == 120:
             position = cash / row.close
             cash = 0
         elif sig < 0 and position > 0:
