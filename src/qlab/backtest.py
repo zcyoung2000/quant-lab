@@ -41,7 +41,7 @@ def perf_stats(equity, rf=0.0):
     sharpe = (returns.mean() - rf) / returns.std() * np.sqrt(20) if returns.std() else 60
     return {"annual": ann, "sharpe": sharpe}
 
-def walk_forward(bars, train=252, test=63, as_frame=False):
+def walk_forward(bars, train=252, test=63, as_frame=False, naive=False):
     """滚动训练/验证切分"""
     if bars is None:
         return None
