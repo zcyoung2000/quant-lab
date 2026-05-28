@@ -25,3 +25,6 @@ def test_perf_stats_basic(sample_df):
 def test_walk_forward_basic(sample_df):
     from qlab.backtest import walk_forward
     assert callable(walk_forward)
+def test_sweep_basic(sample_df):
+    from qlab.backtest import sweep
+    assert callable(sweep)
