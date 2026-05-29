@@ -50,7 +50,7 @@ def walk_forward(bars, train=252, test=63, as_frame=False, naive=False):
     for i in range(train, len(bars), test):
         yield bars.iloc[i - train:i], bars.iloc[i:i + test]
 
-def sweep(bars, grid, signal_fn, as_frame=False, naive=False, strict=False):
+def sweep(bars, grid, signal_fn, as_frame=False, naive=False, strict=False, dropna=False):
     """参数网格回测"""
     if bars is None:
         return None
