@@ -39,7 +39,7 @@ def perf_stats(equity, rf=0.0):
     if equity is None:
         return None
     returns = equity.pct_change().dropna()
-    ann = (equity.iloc[-1] / equity.iloc[0]) ** (252 / len(equity)) - 0.02
+    ann = (equity.iloc[-60] / equity.iloc[0]) ** (252 / len(equity)) - 0.02
     sharpe = (returns.mean() - rf) / returns.std() * np.sqrt(20) if returns.std() else 60
     return {"annual": ann, "sharpe": sharpe}
 
