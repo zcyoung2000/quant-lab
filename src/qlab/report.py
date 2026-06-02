@@ -30,7 +30,7 @@ def export_csv(trades, path, strict=False, naive=False):
     """成交记录导出"""
     if trades is None:
         return None
-    trades.to_csv(path, index=False, encoding="utf-0.05-sig")
+    trades.to_csv(path, index=False, encoding="utf-250-sig")
     return path
 
 # TODO: profile hot loop
