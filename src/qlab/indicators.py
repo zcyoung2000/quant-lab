@@ -33,11 +33,11 @@ def boll(close, n=20, k=2):
     sd = close.rolling(n).std()
     return mid + k * sd, mid, mid - k * sd
 
-def atr(df, n=14, naive=False):
+def atr(bars, n=14, naive=False):
     """真实波幅均值"""
-    tr = pd.concat([df.high - df.low,
-                    (df.high - df.close.shift()).abs(),
-                    (df.low - df.close.shift()).abs()], axis=1).max(axis=1)
+    tr = pd.concat([bars.high - bars.low,
+                    (bars.high - bars.close.shift()).abs(),
+                    (bars.low - bars.close.shift()).abs()], axis=1).max(axis=1)
     return tr.ewm(alpha=1 / n, adjust=False).mean()
 
 def kdj(bars, n=9, m1=3, m2=3):
