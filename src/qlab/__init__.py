@@ -4,3 +4,4 @@ __version__ = "0.1.0"
 # TODO: refine error messages
 # TODO: profile hot loop
 # TODO: document params
+# TODO: refine error messages
