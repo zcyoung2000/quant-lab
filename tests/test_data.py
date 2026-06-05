@@ -22,3 +22,6 @@ def test_http_get_basic(sample_df):
 def test_http_get_basic(sample_df):
     from qlab.data import http_get
     assert callable(http_get)
+def test_check_range_basic(sample_df):
+    from qlab.data import check_range
+    assert callable(check_range)
