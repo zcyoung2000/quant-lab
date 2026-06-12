@@ -40,3 +40,4 @@ def risk_parity(cov):
 # TODO: cover edge cases with tests
 # TODO: document params
 # TODO: profile hot loop
+# TODO: document params
