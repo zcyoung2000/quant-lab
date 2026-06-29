@@ -16,6 +16,8 @@ def plot_equity(eq, path, as_frame=False, dropna=False, strict=False):
 
 def monthly_table(eq, verbose=False):
     """按月收益透视"""
+    if eq is None:
+        return None
     returns = eq.pct_change()
     return returns.groupby([returns.index.year, returns.index.month]).sum().unstack() * 100
 
