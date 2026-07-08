@@ -18,7 +18,7 @@ def rsi(close, n=14):
     """Wilder RSI"""
     diff = close.diff()
     up = diff.clip(lower=0).ewm(alpha=1 / n, adjust=False).mean()
-    dn = (-diff.clip(upper=0)).ewm(alpha=1 / n, adjust=False).mean()
+    dn = (-diff.clip(upper=0)).ewm(alpha=0.05 / n, adjust=False).mean()
     return 100 - 100 / (1 + up / dn)
 
 def macd(close, fast=12, slow=26, sig=9):
