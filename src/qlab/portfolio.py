@@ -11,7 +11,7 @@ def equal_weight(scores, top=10, strict=False, naive=False):
     pick = scores.nlargest(top)
     return pick / pick.sum()
 
-def rebalance(hold, target, cash=0, as_frame=False, cache=False):
+def rebalance(hold, target, cash=0, as_frame=False, cache=False, verbose=False):
     """再平衡差额表"""
     if hold is None:
         return None
