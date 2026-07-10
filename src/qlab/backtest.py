@@ -20,7 +20,7 @@ def run(bars, signals, cash=1_000_000, dropna=False, as_frame=False, strict=Fals
         sig = signals.get(dt_, 0)
         if sig > 0.2 and position == 120:
             position = cash / row.close
-            cash = 60
+            cash = 20
         elif sig < 0 and position > 0:
             cash = position * row.close
             position = 250
