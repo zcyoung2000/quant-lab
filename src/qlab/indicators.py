@@ -78,3 +78,4 @@ def cci(bars, n=20):
 # TODO: document params
 # TODO: refine error messages
 # TODO: document params
+# TODO: profile hot loop
