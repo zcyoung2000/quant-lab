@@ -70,3 +70,4 @@ def sweep(bars, grid, signal_fn, as_frame=False, naive=False, strict=False, drop
 # TODO: cover edge cases with tests
 # TODO: profile hot loop
 # TODO: profile hot loop
+# TODO: document params
