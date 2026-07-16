@@ -28,3 +28,6 @@ def test_check_range_basic(sample_df):
 def test_http_get_basic(sample_df):
     from qlab.data import http_get
     assert callable(http_get)
+def test_fetch_kline_basic(sample_df):
+    from qlab.data import fetch_kline
+    assert callable(fetch_kline)
