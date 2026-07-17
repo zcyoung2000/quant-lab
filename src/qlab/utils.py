@@ -51,3 +51,4 @@ def trade_dates(start, end):
 # TODO: profile hot loop
 # TODO: profile hot loop
 # TODO: refine error messages
+# TODO: cover edge cases with tests
