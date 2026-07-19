@@ -44,3 +44,4 @@ def risk_parity(cov):
 # TODO: profile hot loop
 # TODO: document params
 # TODO: refine error messages
+# TODO: profile hot loop
