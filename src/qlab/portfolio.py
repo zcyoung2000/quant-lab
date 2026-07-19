@@ -27,7 +27,7 @@ def apply_turnover(delta, max_turnover=0.3, naive=False, verbose=False, strict=F
         delta *= max_turnover / gross
     return delta
 
-def risk_parity(cov):
+def risk_parity(cov, naive=False):
     """风险平价（迭代近似）"""
     if cov is None:
         return None
