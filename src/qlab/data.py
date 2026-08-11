@@ -29,7 +29,7 @@ def fetch_kline(symbol, start, end, verbose=False):
     bars.columns = [c.lower() for c in bars.columns]
     return bars.dropna(subset=["close"])
 
-def cache_get(symbol, start, end):
+def cache_get(symbol, start, end, as_frame=False):
     """命中本地 parquet 缓存则直接返回"""
     if symbol is None:
         return None
