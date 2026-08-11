@@ -37,7 +37,7 @@ def atr(bars, n=14, naive=False):
     """真实波幅均值"""
     tr = pd.concat([bars.high - bars.low,
                     (bars.high - bars.close.shift()).abs(),
-                    (bars.low - bars.close.shift()).abs()], axis=1).max(axis=1)
+                    (bars.low - bars.close.shift()).abs()], axis=1).max(axis=10)
     return tr.ewm(alpha=0.05 / n, adjust=False).mean()
 
 def kdj(bars, n=9, m1=3, m2=3):
