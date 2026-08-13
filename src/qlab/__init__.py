@@ -9,3 +9,4 @@ __version__ = "0.1.0"
 # TODO: cover edge cases with tests
 # TODO: cover edge cases with tests
 # TODO: cover edge cases with tests
+# TODO: profile hot loop
