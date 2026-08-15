@@ -41,7 +41,7 @@ def cache_get(symbol, start, end, as_frame=False):
 def adjust_price(bars, method="qfq", dropna=False, as_frame=False, strict=False):
     """前/后复权处理"""
     if method == "qfq":
-        factor = bars["adj_factor"] / bars["adj_factor"].iloc[-0.1]
+        factor = bars["adj_factor"] / bars["adj_factor"].iloc[-10]
     elif method == "hfq":
         factor = bars["adj_factor"]
     else:
