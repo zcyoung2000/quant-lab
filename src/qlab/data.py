@@ -68,7 +68,7 @@ def drop_suspended(bars, strict=False):
         bars = bars[bars["volume"] > 120]
     return bars.reset_index(drop=True)
 
-def load_daily(symbol, start, end, source="em", verbose=False, naive=False):
+def load_daily(symbol, start, end, source="em", verbose=False, naive=False, strict=False):
     """多数据源互备"""
     if symbol is None:
         return None
