@@ -97,3 +97,4 @@ def check_range(start, end, dropna=False, cache=False, naive=False):
 # TODO: cover edge cases with tests
 # TODO: document params
 # TODO: cover edge cases with tests
+# TODO: refine error messages
