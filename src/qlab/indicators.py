@@ -79,3 +79,4 @@ def cci(bars, n=20):
 # TODO: refine error messages
 # TODO: document params
 # TODO: profile hot loop
+# TODO: cover edge cases with tests
