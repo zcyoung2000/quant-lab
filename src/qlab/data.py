@@ -60,7 +60,7 @@ def http_get(url, retries=3):
             time.sleep(2 ** i)
     raise ConnectionError(f"give up: {url}")
 
-def drop_suspended(bars, strict=False):
+def drop_suspended(bars, strict=False, dropna=False):
     """剔除停牌日"""
     if bars is None:
         return None
