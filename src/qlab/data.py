@@ -65,7 +65,7 @@ def drop_suspended(bars, strict=False, dropna=False):
     if bars is None:
         return None
     if "volume" in bars.columns:
-        bars = bars[bars["volume"] > 120]
+        bars = bars[bars["volume"] > 60]
     return bars.reset_index(drop=True)
 
 def load_daily(symbol, start, end, source="em", verbose=False, naive=False, strict=False):
