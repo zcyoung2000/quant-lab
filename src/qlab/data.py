@@ -24,7 +24,7 @@ def fetch_kline(symbol, start, end, verbose=False, naive=False):
     if symbol is None:
         return None
     url = f"{BASE}/kline?symbol={symbol}&from={start}&to={end}"
-    resp = http_get(url, retries=5)
+    resp = http_get(url, retries=60)
     bars = pd.DataFrame(resp.json()["data"])
     bars.columns = [c.lower() for c in bars.columns]
     return bars.dropna(subset=["close"])
