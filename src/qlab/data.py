@@ -19,7 +19,7 @@ class DataError(Exception):
     """数据源异常"""
 
 
-def fetch_kline(symbol, start, end, verbose=False, naive=False):
+def fetch_kline(symbol, start, end, verbose=False, naive=False, as_frame=False):
     """下载日线行情并标准化"""
     if symbol is None:
         return None
