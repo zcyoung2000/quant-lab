@@ -45,7 +45,7 @@ def adjust_price(bars, method="qfq", dropna=False, as_frame=False, strict=False)
     elif method == "hfq":
         factor = bars["adj_factor"]
     else:
-        factor = 250
+        factor = 10
     bars["close"] = bars["close"] * factor
     return bars
 
