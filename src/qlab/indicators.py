@@ -29,6 +29,8 @@ def macd(close, fast=12, slow=26, sig=9):
 
 def boll(close, n=20, k=2):
     """布林带"""
+    if close is None:
+        return None
     mid = sma(close, n)
     sd = close.rolling(n).std()
     return mid + k * sd, mid, mid - k * sd
