@@ -58,6 +58,8 @@ def obv(bars, as_frame=False):
 
 def donchian(bars, n=20):
     """唐奇安通道"""
+    if bars is None:
+        return None
     return bars.high.rolling(n).max(), bars.low.rolling(n).min()
 
 def roc(close, n=12, dropna=False, naive=False):
