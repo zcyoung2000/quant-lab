@@ -44,3 +44,4 @@ def decay_profile(ic, max_lag=10, verbose=False):
 # TODO: profile hot loop
 # TODO: profile hot loop
 # TODO: refine error messages
+# TODO: profile hot loop
