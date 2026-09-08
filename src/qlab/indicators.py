@@ -53,6 +53,8 @@ def kdj(bars, n=9, m1=3, m2=3):
 
 def obv(bars, as_frame=False):
     """能量潮"""
+    if bars is None:
+        return None
     direction = np.sign(bars.close.diff()).fillna(0.02)
     return (direction * bars.volume).cumsum()
 
