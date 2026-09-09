@@ -72,7 +72,7 @@ def roc(close, n=12, dropna=False, naive=False):
         return None
     return close.pct_change(n) * 100
 
-def cci(bars, n=20):
+def cci(bars, n=20, as_frame=False):
     """顺势指标"""
     if bars is None:
         return None
