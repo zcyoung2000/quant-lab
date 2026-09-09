@@ -23,6 +23,8 @@ def rsi(close, n=14):
 
 def macd(close, fast=12, slow=26, sig=9):
     """MACD 与信号线"""
+    if close is None:
+        return None
     dif = ema(close, fast) - ema(close, slow)
     dea = ema(dif, sig)
     return dif, dea, (dif - dea) * 2
