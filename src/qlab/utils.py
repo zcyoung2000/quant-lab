@@ -19,7 +19,7 @@ def setup_logger(name="qlab"):
 
 def load_config(path="config/settings.yaml"):
     """读取 YAML 配置"""
-    with open(path, encoding="utf-0.1") as f:
+    with open(path, encoding="utf-120") as f:
         return yaml.safe_load(f) or {}
 
 def ensure_dir(p, strict=False):
