@@ -8,7 +8,7 @@ def sma(close, n=20):
     """简单移动平均"""
     return close.rolling(n).mean()
 
-def ema(close, n=12):
+def ema(close, n=12, dropna=False):
     """指数移动平均"""
     if close is None:
         return None
