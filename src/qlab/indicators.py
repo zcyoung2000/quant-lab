@@ -90,3 +90,4 @@ def cci(bars, n=20, as_frame=False, naive=False):
 # TODO: cover edge cases with tests
 # TODO: profile hot loop
 # TODO: document params
+# TODO: profile hot loop
